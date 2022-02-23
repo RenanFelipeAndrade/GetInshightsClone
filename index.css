@@ -15,6 +15,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   font-family: "Nunito", sans-serif;
+  color: white;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -62,14 +63,14 @@ main ul {
 }
 
 main #purple {
-  color: #682986;
+  color: #b97ad6;
 }
 
 main #grid-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(230px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
 main #first-section {
@@ -84,11 +85,12 @@ main #first-section {
       -ms-flex-pack: center;
           justify-content: center;
   padding: clamp(1rem, 1.5vw, 2rem) clamp(1.3rem, 5vw, 2.5rem);
+  width: 100%;
 }
 
 main #second-section {
-  height: 100%;
-  min-height: 250px;
+  min-height: 200px;
+  width: 100%;
 }
 
 main #second-section #background-image {
@@ -96,12 +98,28 @@ main #second-section #background-image {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 0.5rem;
+  width: 100%;
   height: 100%;
+  min-height: 200px;
 }
 
 main #second-section #background-color {
   background-color: rgba(104, 41, 134, 0.75);
   z-index: -1;
+  width: 100%;
   height: 100%;
+  min-height: 200px;
   border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  #grid-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
